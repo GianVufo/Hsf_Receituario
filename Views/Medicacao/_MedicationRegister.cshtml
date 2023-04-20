@@ -1,0 +1,50 @@
+@model Medicacao;
+@{
+    ViewData["title"] = "Adicionar Medicamentos";
+}
+
+<div class="container medicament">
+
+    <div class="medicamento">
+
+        <form name="medic-form" id="medic-form" class="medicament-form">
+
+            <span class="" id="alerta"></span>
+
+            <input id="medicationId" type="hidden" asp-for="@Model.Id">
+
+            <label for="">Nome do Medicamento: </label>
+            <input id="medicationName" class="form-control mb-3"
+                asp-for="@Model.MedicationName"
+                type="text">
+
+            <label for="">Dosagem do Medicamento: </label>
+            <input id="medicationDosage" class="form-control mb-3"
+                asp-for="@Model.MedicationDosage"
+                type="text">
+
+            <label asp-for="MedicationMethodUse" for="MedicationMethodUse"> Tipo
+                de uso do medicamento: </label>
+            <select class="custom-select d-block w-100"
+                asp-for="MedicationMethodUse" for="MedicationMethodUse"
+                id="medicationUse">
+
+                <option value="">Selecionar...</option>
+                <option asp-for="MedicationMethodUse" for="MedicationMethodUse"
+                    value="Oral">Oral</option>
+                <option asp-for="MedicationMethodUse" for="MedicationMethodUse"
+                    value="Intravenosa">Intravenosa</option>
+                <option asp-for="MedicationMethodUse" for="MedicationMethodUse"
+                    value="Nasal">Nasal</option>
+                <option asp-for="MedicationMethodUse" for="MedicationMethodUse"
+                    value="Tópica">Tópica</option>
+
+            </select>
+
+            <button type="submit" class="btn btn-md btn-primary mt-3">Adicionar</button>
+
+        </form>
+        
+    </div>
+
+</div>

@@ -1,0 +1,20 @@
+.prescription {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 9%;
+}
+
+.prescription-form {
+    margin-bottom: 10%;
+}
+
+.prescription-form input {
+    width: 30em;
+}
+
+.medic-btn:hover {
+    cursor: not-allowed;
+}

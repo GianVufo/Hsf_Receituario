@@ -1,0 +1,19 @@
+.medicament {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 9%;
+    margin-top: 5%;
+    margin-bottom: 0%;
+}
+
+.medicament-form {
+    margin-bottom: 10%;
+}
+
+.medicament-form input {
+    width: 18em;
+}
+
+.medicament-form button {
+    margin-left: 33%;
+}

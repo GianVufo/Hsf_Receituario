@@ -1,0 +1,76 @@
+@model Receituario;
+@using Hsf_Receitas.Models;
+
+@{
+    ViewData["title"] = "Editar Receituário";
+
+    Medicacao medic = new Medicacao();
+}
+
+<div class="container prescription">
+
+    <div class="receita">
+        
+        <h1 class="mt-4 mb-4 text-center"> Editar Receituário</h1>,
+
+        <form class="up-prescription-form">
+
+            <input id="up-prescriprion-id" class="form-control" type="hidden" asp-for="@Model.Id">
+            <input id="up-MEDICATION-id" class="form-control" type="hidden" asp-for="@Model.Id">
+
+            <label for="">Nome do Paciente: </label>
+            <input type="text" name="" id="up-prescriprion-pacientName" class="form-control mb-3"
+                asp-for="@Model.PacientName">
+
+            <label for="">Nome do Médico: </label>
+            <input type="text" name="" id="up-prescriprion-doctorName" class="form-control mb-3"
+                asp-for="@Model.DoctorName">
+
+            <label for="">Data da consulta: </label>
+            <input type="date" name="" id="up-prescriprion-dataAppoiment" class="form-control mb-3"
+                asp-for="@Model.DateOfMedicalAppoiment">
+
+            <p class="alert text-danger">Agora você pode inserir medicamentos à receita.</p>
+
+            <button type="submit" title="Gerar Receita" class="btn btn-md btn-primary mb-3">Salvar</button>  
+
+            <button type="button" data-toggle="modal" data-target="#medication-modal" title="Inserir medicamentos à receita" class="btn btn-md btn-primary mb-3">Adicionar Medicamentos</button> 
+            <!--<a href="javascript:window.print()">Imprimir</a> -->
+        </form>
+
+    </div>
+
+</div>
+
+<!--Start Medication Modal-->
+
+<div class="modal fade" id="medication-modal" tabindex="-1" role="dialog"
+    aria-labelledby="registerUserTitle" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header text-center">
+
+                <h2 class="text-center"> Inserir Medicamento</h2>
+
+                <button type="button" class="close" data-dismiss="modal"
+                    aria-label="Close">
+
+                    <span aria-hidden="true">&times;</span>
+
+                </button>
+
+            </div>
+
+            <div class="modal-body p-0">
+                @await Html.PartialAsync("/Views/Medicacao/_MedicationRegister.cshtml", @medic)
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!--Finish Medication Modal-->
