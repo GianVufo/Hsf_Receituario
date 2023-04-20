@@ -1,13 +1,14 @@
-﻿/*function inserirRemedios()
+﻿function inserirRemedios()
 {
-  let recId = document.getElementById("rec-id").value;
+  let recId = $("#rec-id").val();
   console.log("REC ID: " + recId);
-  document.getElementById("receituarioId").value = recId;
-  document.getElementById("medicationId").value = recId;
-  console.log("RECEITUARIO ID: " + document.getElementById("receituarioId").value);
+
+  $("#receituarioId").val() = recId;
+  //document.getElementById("medicationId").value = recId;
+  console.log("RECEITUARIO ID: " + $("$receituarioId").val());
 }
 
-function inserirReceita()
+/*function inserirReceita()
 {
   let recId = document.getElementById("prescriptionId").value;
 

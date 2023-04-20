@@ -3,7 +3,7 @@
     justify-content: center;
     margin-bottom: 9%;
     margin-top: 5%;
-    margin-bottom: 0%;
+    margin-bottom: 10%;
 }
 
 .medicament-form {
@@ -11,7 +11,7 @@
 }
 
 .medicament-form input {
-    width: 18em;
+    width: 28em;
 }
 
 .medicament-form button {

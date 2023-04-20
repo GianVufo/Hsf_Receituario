@@ -18,10 +18,12 @@ namespace Hsf_Receitas.Controllers
 
         public IActionResult MedicationRegister()
         {
+
             return View();
         }
 
         [HttpPost]
+
         public IActionResult MedicationRegister(Medicacao novaMedicacao)
         {
             try {
@@ -29,27 +31,13 @@ namespace Hsf_Receitas.Controllers
                 MedicacaoServices medServ = new MedicacaoServices();
                 medServ.AddMedicacao(novaMedicacao);
 
-                return RedirectToAction( "Prescription", "Receituario");
+                return Json(new { stats = "OK"});
 
             }catch (Exception e){
                 _logger.LogError("Erro ao Adicionar Medicamento!" + e.Message);
-                return RedirectToAction( "Index", "Home");;
+                return Json(new { stats = "INVALID", message = "Falha ao inserir medicamento!" });
             }
         }
-        /*public IActionResult MedicationRegister(Medicacao novaMedicacao)
-        {
-            try {
-
-                MedicacaoServices medServ = new MedicacaoServices();
-                medServ.AddMedicacao(novaMedicacao);
-
-                return Json(new { stats = "OK" });
-
-            }catch (Exception e){
-                _logger.LogError("Erro ao Adicionar Medicamento!" + e.Message);
-                return Json(new { stats = "INVALID", message = "Falha ao cadastrar usuário!" });
-            }
-        }*/
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

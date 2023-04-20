@@ -22,7 +22,6 @@ namespace Hsf_Receitas.Services
             rec.PacientName = editreceita.PacientName;
             rec.DoctorName = editreceita.DoctorName;
             rec.DateOfMedicalAppoiment = editreceita.DateOfMedicalAppoiment;
-            rec.MedicacaoId = editreceita.MedicacaoId;
 
             database.SaveChanges();
         

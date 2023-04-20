@@ -1,4 +1,4 @@
-/*function AddMedications() {
+function AddMedications() {
 
   let properties = {
     Id: $("#medicationId").val(),
@@ -35,4 +35,4 @@ $(document).ready(function () {
     e.preventDefault();
     AddMedications();
   });
-});*/
+});

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Hsf_Receitas.Data;
 using Hsf_Receitas.Models;
 using Hsf_Receitas.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -27,31 +26,21 @@ namespace Hsf_Receitas.Controllers
         [HttpPost]
         public IActionResult Prescription(Receituario novaReceita, int id)
         {
-           /*try {
-
+           try 
+           {
                 ReceituarioServices recServ = new ReceituarioServices();
                 recServ.AddReceita(novaReceita);
 
-                return Json(new { stats = "OK" });
+                id = novaReceita.Id;
 
-            }catch (Exception e){
+                return Json(new { stats = "OK", id = id});
+
+            }catch (Exception e)
+            {
                 _logger.LogError("Erro ao adicionar receita!" + e.Message);
                 return Json(new { stats = "INVALID", message = "Falha ao cadastrar Receita!" });
-            }*/
-
-            HSFContext database = new HSFContext();
-
-            if (novaReceita.MedicacaoId <= 0)
-            {
-                listaDeReceitas.Add(novaReceita);
-                return RedirectToAction("CompletePrescription", "Receituario");
-            }else
-            {
-                database.Receitas.Add(novaReceita);
-                database.SaveChanges();
             }
 
-            return View("/Views/Receituario/CompletePrescription");
         }
 
         public IActionResult CompletePrescription (int id)
@@ -63,18 +52,6 @@ namespace Hsf_Receitas.Controllers
         [HttpPost]
         public IActionResult CompletePrescription(Receituario editReceita)
         {
-           /*try {
-
-                ReceituarioServices recServ = new ReceituarioServices();
-                recServ.EditReceita(novaReceita);
-
-                return Json(new { stats = "OK" });
-
-            }catch (Exception e){
-                _logger.LogError("Erro ao edtar receita!" + e.Message);
-                return Json(new { stats = "INVALID", message = "Falha ao editar Receita!" });
-            }*/
-
             try {
 
                 new ReceituarioServices().EditReceita(editReceita);

@@ -19,10 +19,5 @@ namespace Hsf_Receitas.Models
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DateOfMedicalAppoiment { get; set; }
 
-        public Medicacao Medicacao { get; set; }
-
-        [ForeignKey("MedicacaoId")]
-        public int MedicacaoId { get; set; }
-
     }
 }

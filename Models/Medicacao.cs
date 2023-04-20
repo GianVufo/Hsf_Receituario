@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Hsf_Receitas.Models
 {
@@ -15,6 +16,11 @@ namespace Hsf_Receitas.Models
 
         [Required(ErrorMessage = " Método de uso do medicamento é obrigatório! "), StringLength(20)]
         public string MedicationMethodUse { get; set; }
+        
+        public Receituario Receituario { get; set; }
+
+        [ForeignKey("ReceituarioId")]
+        public int ReceituarioId { get; set; }
 
     }
 }

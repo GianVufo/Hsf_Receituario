@@ -11,12 +11,11 @@
 
     <div class="receita">
         
-        <h1 class="mt-4 mb-4 text-center"> Editar Receituário</h1>,
+        <h1 class="mt-4 mb-4 text-center"> Finalizar Receituário</h1>
 
-        <form class="up-prescription-form">
+        <form asp-controller="Receituario" asp-action="CompletePrescription" class="up-prescription-form">
 
-            <input id="up-prescriprion-id" class="form-control" type="hidden" asp-for="@Model.Id">
-            <input id="up-MEDICATION-id" class="form-control" type="hidden" asp-for="@Model.Id">
+            <input id="rec-id" class="form-control" type="number" asp-for="@Model.Id" disabled>
 
             <label for="">Nome do Paciente: </label>
             <input type="text" name="" id="up-prescriprion-pacientName" class="form-control mb-3"
@@ -34,8 +33,11 @@
 
             <button type="submit" title="Gerar Receita" class="btn btn-md btn-primary mb-3">Salvar</button>  
 
-            <button type="button" data-toggle="modal" data-target="#medication-modal" title="Inserir medicamentos à receita" class="btn btn-md btn-primary mb-3">Adicionar Medicamentos</button> 
+            <a data-toggle="modal" data-target="#medication-modal" href="/Medicacao/MedicationRegister?Id=@Model.Id" id="completePrescription" onchange=" return inserirRemedios() " title="Inserir medicamentos à receita" class="btn btn-md btn-primary mb-3">Adicionar Medicamentos</a>
+
+            <!--<button type="button" data-toggle="modal" data-target="#medication-modal" title="Inserir medicamentos à receita" class="btn btn-md btn-primary mb-3">Adicionar Medicamentos</button>-->
             <!--<a href="javascript:window.print()">Imprimir</a> -->
+
         </form>
 
     </div>

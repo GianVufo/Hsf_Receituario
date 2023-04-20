@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hsf_Receitas.Migrations
 {
     [DbContext(typeof(HSFContext))]
-    [Migration("20230420013736_HSF_Database")]
+    [Migration("20230420202644_HSF_Database")]
     partial class HSF_Database
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,7 +40,12 @@ namespace Hsf_Receitas.Migrations
                         .HasColumnType("varchar(80) CHARACTER SET utf8mb4")
                         .HasMaxLength(80);
 
+                    b.Property<int>("ReceituarioId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("ReceituarioId");
 
                     b.ToTable("Medicamentos");
                 });
@@ -59,9 +64,6 @@ namespace Hsf_Receitas.Migrations
                         .HasColumnType("varchar(80) CHARACTER SET utf8mb4")
                         .HasMaxLength(80);
 
-                    b.Property<int>("MedicacaoId")
-                        .HasColumnType("int");
-
                     b.Property<string>("PacientName")
                         .IsRequired()
                         .HasColumnType("varchar(80) CHARACTER SET utf8mb4")
@@ -69,16 +71,14 @@ namespace Hsf_Receitas.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MedicacaoId");
-
                     b.ToTable("Receitas");
                 });
 
-            modelBuilder.Entity("Hsf_Receitas.Models.Receituario", b =>
+            modelBuilder.Entity("Hsf_Receitas.Models.Medicacao", b =>
                 {
-                    b.HasOne("Hsf_Receitas.Models.Medicacao", "Medicacao")
+                    b.HasOne("Hsf_Receitas.Models.Receituario", "Receituario")
                         .WithMany()
-                        .HasForeignKey("MedicacaoId")
+                        .HasForeignKey("ReceituarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
