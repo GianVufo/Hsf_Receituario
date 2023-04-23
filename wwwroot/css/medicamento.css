@@ -17,3 +17,24 @@
 .medicament-form button {
     margin-left: 33%;
 }
+
+.table-medicament {
+    margin-left: 5%;
+
+    padding: 0%;
+  }
+  
+  .table-medicament tr>th:first-child,
+  .table-medicament tr>td:first-child,
+  .table-medicament tr>th:nth-child(2),
+  .table-medicament tr>td:nth-child(2),
+  .table-medicament tr>th:last-child,
+  .table-medicament tr>td:last-child {
+    width: 1%;
+    white-space: nowrap;
+    text-align: center;
+  }
+  
+  .table-medicament tr:hover {
+    cursor: pointer;
+  }

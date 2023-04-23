@@ -5,48 +5,47 @@
     ViewData["title"] = "Listagem de medicamentos";
 }
 
-
-<!--if(medic.VizualizarMedicacao().Count() > 0)
+@if (Model.Count() > 0)
 {
-    <table class="table table-responsive table-bordered table-sm table-striped table-light table-hover table-medicament" id="medic-list">
+    <table class="table table-responsive table-bordered table-sm table-striped
+    table-light table-hover table-medicament" id="medic-list">
 
-        <thead class="bg-primary text-light"> 
+        <thead class="bg-primary text-light">
 
-            <tr> 
-                                    
-                <th>Id</th> 
-                <th>Nome da Medicação</th> 
-                <th>Dosagem</th> 
-                <th>Tipo de Uso</th> 
-                                
             <tr>
 
-        </thead> 
+                <th>Nome da Medicação</th>
+                <th>Dosagem</th>
+                <th>Tipo de Uso</th>
 
-        <tbody> 
+            </tr>
 
-            foreach (var item in medic.VizualizarMedicacao())
+        </thead>
+
+        <tbody>
+
+            @foreach (var item in Model)
             {
                 <tr>
 
-                    <td class="text-center">item.Id.ToString("D4")</td>
+                    <td class="text-center">@item.MedicationName</td>
 
-                    <td class="text-center">item.MedicationName</td>
+                    <td>@item.MedicationDosage</td>
 
-                    <td>item.MedicationDosage</td>
-
-                     <td>item.MedicationMethodUse</td>
+                    <td>@item.MedicationMethodUse</td>
 
                 </tr>
             }
 
         </tbody>
-                            
+
     </table>
-    
-}else {
+
+}
+else
+{
     <div class="alert alert-warning w-100 alert-TA" role="alert">
         Nenhuma medicação adicionada !
     </div>
-}-->
+}
 
