@@ -43,7 +43,7 @@ namespace Hsf_Receitas.Controllers
 
         }
 
-        public IActionResult CompletePrescription (int id)
+        public IActionResult CompletePrescription(int id)
         {
             Receituario buscaReceita = new ReceituarioServices().SearchForId(id);
             return View(buscaReceita);
@@ -55,12 +55,12 @@ namespace Hsf_Receitas.Controllers
             try {
 
                 new ReceituarioServices().EditReceita(editReceita);
-                return RedirectToAction("Receituario", "Prescription");
+                return Json(new { stats = "OK"});
 
             }catch (Exception e)
             {
                 _logger.LogError("Erro ao completar o receituário !" + e.Message);
-                return RedirectToAction("Index", "Home");
+               return Json(new { stats = "INVALID", message = "Falha ao Salvar Receita!" });
             }
         }
 

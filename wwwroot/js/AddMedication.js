@@ -12,14 +12,10 @@ function AddMedications() {
 
     .done(function (output) {
       if (output.stats == "OK") {
-        setTimeout(function () {
-          $("#alerta")
-            .html(
-              '<div class="alert alert-success"> Medicamento adicionado com sucesso! </div>'
-            )
-            .fadeOut(5000);
-        }, 80);
+        
+        alert("Medicação: " + properties.MedicationName + " cadastrada com sucesso!")
         $(location).attr('href', '/Receituario/CompletePrescription?id='+parseInt(properties.ReceituarioId));
+
       } else if (output.stats == "INVALID") {
         $("#alerta").html('<div class="alert alert-danger"> Não foi possível cadastrar essa medicação. Tente mais tarde!</div>');
 

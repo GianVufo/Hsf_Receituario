@@ -13,9 +13,9 @@
         
         <h1 class="mt-4 mb-4 text-center">Receituário</h1>
 
-        <form method="post" asp-action="CompletePrescription" asp-controller="Receituario" class="prescription-form">
+        <form id="up-receita-form" class="prescription-form">
 
-            <span class="mt-3 mb-3" id="danger"></span>
+            <span class="mt-3 mb-3" id="alerta"></span>
 
             <input id="up-prescriptionId" class="form-control mb-3" type="number" asp-for="Id" disabled>
 
@@ -36,8 +36,6 @@
             <button type="submit" title="Gerar Receita" class="btn btn-md btn-primary mb-3">Salvar</button>
 
             <button type="button" data-toggle="modal" data-target="#medication-modal-@Model.Id" title="Inserir medicamentos à receita" class="btn btn-md btn-success mb-3">Adicionar Medicamentos</button>
-
-            <!--<a style="color: #fff;" href="/Medicacao/MedicationRegister?id=Model.Id" type="button" title=" Adicionar medicamentos." class="btn btn-md btn-success mb-3">Adicionar Medicamentos</a> -->
 
         </form>
 
