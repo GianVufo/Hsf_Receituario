@@ -19,6 +19,7 @@ function AddMedications() {
             )
             .fadeOut(5000);
         }, 80);
+        $(location).attr('href', '/Receituario/CompletePrescription?id='+parseInt(properties.ReceituarioId));
       } else if (output.stats == "INVALID") {
         $("#alerta").html('<div class="alert alert-danger"> Não foi possível cadastrar essa medicação. Tente mais tarde!</div>');
 
