@@ -6,12 +6,10 @@
     ViewData["title"] = "Completar Receituário";
 
     Medicacao medic = new Medicacao();
-
     HSFContext database = new HSFContext();
 
-    List<Medicacao> medicList = database.Medicamentos.Where( m => m.ReceituarioId == Model.Id).ToList();
-
-    
+    List<Medicacao> medicList = database.Medicamentos.Where(m => m.ReceituarioId ==
+    Model.Id).ToList();
 }
 
 <div class="container prescription">
@@ -25,7 +23,7 @@
             <span class="mt-3 mb-3" id="alerta"></span>
 
             <input id="up-prescriptionId" class="form-control mb-3"
-                type="number" asp-for="Id" disabled>
+                type="hidden" asp-for="Id" disabled>
 
             <label for="">Nome do Paciente: </label>
             <input type="text" id="up-pacientName" class="form-control mb-3"
@@ -45,7 +43,8 @@
 
             <button type="button" data-toggle="modal"
                 data-target="#medication-modal-@Model.Id" title="Inserir
-                medicamentos à receita" onclick=" inserirRemedios()" class="btn btn-md btn-success mb-3">Adicionar
+                medicamentos à receita" onclick=" inserirRemedios()" class="btn
+                btn-md btn-success mb-3">Adicionar
                 Medicamentos</button>
 
         </form>
@@ -55,7 +54,6 @@
     <div class="col-md-6 list-TA">
         @await Html.PartialAsync("/Views/Medicacao/_ListaDeMedicacao.cshtml", @medicList)
     </div>
-
 
 </div>
 

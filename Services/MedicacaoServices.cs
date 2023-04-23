@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
 using Hsf_Receitas.Models;
 using Hsf_Receitas.Data;
 

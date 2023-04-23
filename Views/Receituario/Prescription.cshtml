@@ -1,8 +1,5 @@
 @model Receituario;
 @using Hsf_Receitas.Models;
-@using Hsf_Receitas.Data;
-@using System.Linq;
-@using Microsoft.AspNetCore.Http;
 
 @{
     ViewData["title"] = "Gerar Receituário";
@@ -11,21 +8,22 @@
 <div class="container prescription">
 
     <div class="receita">
-        
+
         <h1 class="mt-4 mb-4 text-center">Receituário</h1>
 
         <form id="receita-form" class="prescription-form">
 
             <span class="mt-3 mb-3" id="danger"></span>
 
-            <input id="prescriptionId" class="form-control mb-3" type="number" asp-for="Id" disabled>
+            <input id="prescriptionId" class="form-control mb-3" type="hidden"
+                asp-for="Id" disabled>
 
             <label for="">Nome do Paciente: </label>
             <input type="text" id="pacientName" class="form-control mb-3"
                 asp-for="PacientName" required>
 
             <label for="">Nome do Médico: </label>
-            <input type="text"id="doctorName" class="form-control mb-3"
+            <input type="text" id="doctorName" class="form-control mb-3"
                 asp-for="DoctorName" required>
 
             <label for="">Data da consulta: </label>
@@ -34,11 +32,12 @@
 
             <p>Salve a receita para inserir medicamentos.</p>
 
-            <button type="submit" title="Gerar Receita" class="btn btn-md btn-primary mb-3">Salvar</button>
+            <button type="submit" title="Gerar Receita" class="btn btn-md
+                btn-primary mb-3">Salvar</button>
 
-            <button target type="button"title="Salve a receita para adicionar medicamentos." class="btn btn-md
-                btn-primary medic-btn mb-3" disabled>Adicionar Medicamentos</button> 
-
+            <button target type="button" title="Salve a receita para adicionar
+                medicamentos." class="btn btn-md
+                btn-primary medic-btn mb-3" disabled>Adicionar Medicamentos</button>
         </form>
 
     </div>

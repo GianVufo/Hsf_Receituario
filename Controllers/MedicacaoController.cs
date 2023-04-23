@@ -18,7 +18,6 @@ namespace Hsf_Receitas.Controllers
 
         public IActionResult MedicationRegister()
         {
-
             return View();
         }
 

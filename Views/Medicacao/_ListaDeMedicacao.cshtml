@@ -1,5 +1,4 @@
 @model List<Medicacao>
-@using Hsf_Receitas.Services;
 
 @{
     ViewData["title"] = "Listagem de medicamentos";
@@ -44,7 +43,7 @@
 }
 else
 {
-    <div class="alert alert-warning w-100 alert-TA" role="alert">
+    <div class="alert alert-warning w-100 text-center alert-TA" role="alert">
         Nenhuma medicação adicionada !
     </div>
 }

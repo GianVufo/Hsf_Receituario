@@ -1,4 +1,3 @@
-using System;
 
 namespace Hsf_Receitas.Models
 {

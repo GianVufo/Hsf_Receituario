@@ -1,19 +1,7 @@
 @model Medicacao;
-@using Hsf_Receitas.Data;
-@using System.Linq;
 
 @{
     ViewData["title"] = "Adicionar Medicamentos";
-
-    HSFContext database = new HSFContext();
-
-    var idReceituario = database.Receitas.OrderByDescending( r => r.Id).Take(1).Last();
-
-    //var id = database.Medicamentos.OrderByDescending( r => r.Id).Take(1).Last();
-
-    //int idMedicamentos = id.Id + 1;
-
-
 }
 
 <div class="container medicament">
@@ -26,8 +14,10 @@
 
             <span class="" id="alerta"></span>
 
-            <input class="form-control mb-3" id="medicationId" value="@Model.Id" type="number" asp-for="@Model.Id" disabled>
-            <input class="form-control mb-3" id="receituarioId" type="number" asp-for="@Model.ReceituarioId" disabled>
+            <input class="form-control mb-3" id="medicationId" value="@Model.Id"
+                type="hidden" asp-for="@Model.Id" disabled>
+            <input class="form-control mb-3" id="receituarioId" type="hidden"
+                asp-for="@Model.ReceituarioId" disabled>
 
             <label for="">Nome do Medicamento: </label>
             <input id="medicationName" class="form-control mb-3"
@@ -58,9 +48,8 @@
             </select>
 
             <button type="submit" class="btn btn-md btn-primary mt-3">Adicionar</button>
-
         </form>
-        
+
     </div>
 
 </div>
