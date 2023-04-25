@@ -1,5 +1,7 @@
 using Hsf_Receitas.Models;
 using Hsf_Receitas.Data;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Hsf_Receitas.Services
 {
@@ -25,6 +27,24 @@ namespace Hsf_Receitas.Services
 
             database.SaveChanges();
         
+        }
+
+        public List<Receituario> ListPrescription() {
+            using HSFContext database = new HSFContext();
+            return database.Receitas.ToList();
+        }
+
+        public List<Receituario> ListPrescriptionsForId(int id)
+        {
+            using HSFContext database = new HSFContext();
+
+            List<Receituario> prescriptionList = new List<Receituario>();
+
+            Receituario foundPrescription = database.Receitas.Where(p => p.Id == id).SingleOrDefault();
+
+            prescriptionList.Add(foundPrescription);
+
+            return prescriptionList;
         }
 
         public Receituario SearchForId(int id)
