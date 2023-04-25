@@ -12,48 +12,85 @@
     Model.Id).ToList();
 }
 
-<div class="container prescription">
+<div class="prescription">
 
-    <div class="receita">
+    <div class="card">
 
-        <h1 class="mt-4 mb-4 text-center">Receituário</h1>
+        <div class="card-header text-light">
 
-        <form id="up-receita-form" class="prescription-form">
+            <h1 class="text-center">Receituário</h1>
 
-            <span class="mt-3 mb-3" id="alerta"></span>
+        </div>
 
-            <input id="up-prescriptionId" class="form-control mb-3"
-                type="hidden" asp-for="Id" disabled>
+        <div class="card-body">
 
-            <label for="">Nome do Paciente: </label>
-            <input type="text" id="up-pacientName" class="form-control mb-3"
-                asp-for="PacientName" required>
+            <div class="receita">
 
-            <label for="">Nome do Médico: </label>
-            <input type="text" id="up-doctorName" class="form-control mb-3"
-                asp-for="DoctorName" required>
+                <form id="up-receita-form" class="prescription-form">
 
-            <label for="">Data da consulta: </label>
-            <input type="date" id="up-dataAppoiment" class="form-control mb-3"
-                asp-for="DateOfMedicalAppoiment" required>
+                    <span class="mt-3 mb-3" id="alerta"></span>
 
-            <p style="color: green;">Agora você pode adicionar medicamentos</p>
-            <button type="submit" title="Gerar Receita" class="btn btn-md
-                btn-primary mb-3">Salvar</button>
+                    <div class="card medicine-card">
 
-            <button type="button" data-toggle="modal"
-                data-target="#medication-modal-@Model.Id" title="Inserir
-                medicamentos à receita" onclick=" inserirRemedios()" class="btn
-                btn-md btn-success mb-3">Adicionar
-                Medicamentos</button>
+                        <h5 class="card-header">Informações básicas :</h5>
 
-        </form>
+                        <div class="card-body">
+
+                            <input id="up-prescriptionId" class="form-control mb-3"
+                                type="hidden" asp-for="Id" disabled>
+
+                            <label for="">Nome do Paciente: </label>
+                            <input type="text" id="up-pacientName" class="form-control
+                                mb-3"
+                                asp-for="PacientName" required>
+
+                            <label for="">Nome do Médico: </label>
+                            <input type="text" id="up-doctorName" class="form-control
+                                mb-3"
+                                asp-for="DoctorName" required>
+
+                            <label for="">Data da consulta: </label>
+                            <input type="date" id="up-dataAppoiment" class="form-control
+                                mb-3"
+                                asp-for="DateOfMedicalAppoiment" required>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card medicine-card">
+
+                        <h5 class="card-header">Medicações :</h5>
+
+                        <div class="card-body">
+
+                            <p class="text-info ml-3">Agora você pode adicionar medicamentos!</p>
+
+                            <div class="col-md-12 mt-3">
+                                @await Html.PartialAsync("/Views/Medicacao/_ListaDeMedicacao.cshtml", @medicList)
+                            </div>
+
+                            <button type="button" data-toggle="modal"
+                                data-target="#medication-modal-@Model.Id"
+                                title="Inserir medicamentos à receita"
+                                onclick=" inserirRemedios()" class="btn
+                                btn-md btn-info btn-printer ml-3"> <span
+                                    class="material-symbols-outlined"> syringe
+                                </span> Adicionar Medicamentos</button>
+
+                        </div>
+
+                    </div>
+
+                    <button class="btn btn-md btn-secondary btn-printer" href=""><span class="material-symbols-outlined"> print </span> Imprimir </button>
+
+                </form>
+
+            </div>
+        </div>
 
     </div>
 
-    <div class="col-md-6 list-TA">
-        @await Html.PartialAsync("/Views/Medicacao/_ListaDeMedicacao.cshtml", @medicList)
-    </div>
 
 </div>
 
@@ -68,7 +105,7 @@
 
             <div class="modal-header text-center">
 
-                <h2 class="text-center"> Inserir Medicamento</h2>
+                <h2 class="text-center mb-0"> Inserir Medicamento</h2>
 
                 <button type="button" class="close" data-dismiss="modal"
                     aria-label="Close">

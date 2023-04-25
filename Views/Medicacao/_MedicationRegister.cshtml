@@ -10,30 +10,30 @@
 
         <form name="medic-form" id="medic-form" class="medicament-form">
 
-            <h1>Cadastrar Medicamentos</h1>
+            <!--<h1>Cadastrar Medicamentos</h1>-->
 
-            <span class="" id="alerta"></span>
+            <span class="" id="danger"></span>
 
             <input class="form-control mb-3" id="medicationId" value="@Model.Id"
-                type="hidden" asp-for="@Model.Id" disabled>
+                type="hidden" asp-for="@Model.Id" disabled required>
             <input class="form-control mb-3" id="receituarioId" type="hidden"
-                asp-for="@Model.ReceituarioId" disabled>
+                asp-for="@Model.ReceituarioId" disabled required>
 
             <label for="">Nome do Medicamento: </label>
             <input id="medicationName" class="form-control mb-3"
                 asp-for="@Model.MedicationName"
-                type="text">
+                type="text" required>
 
             <label for="">Dosagem do Medicamento: </label>
             <input id="medicationDosage" class="form-control mb-3"
                 asp-for="@Model.MedicationDosage"
-                type="text">
+                type="text" required>
 
             <label asp-for="MedicationMethodUse" for="MedicationMethodUse"> Tipo
                 de uso do medicamento: </label>
             <select class="custom-select d-block w-100"
                 asp-for="MedicationMethodUse" for="MedicationMethodUse"
-                id="medicationUse">
+                id="medicationUse" required>
 
                 <option value="">Selecionar...</option>
                 <option asp-for="MedicationMethodUse" for="MedicationMethodUse"

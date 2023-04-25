@@ -1,45 +1,89 @@
 @model Receituario;
 @using Hsf_Receitas.Models;
+@using Hsf_Receitas.Data;
 
 @{
     ViewData["title"] = "Gerar Receituário";
 }
 
-<div class="container prescription">
+<div class="prescription">
 
-    <div class="receita">
+    <div class="card">
 
-        <h1 class="mt-4 mb-4 text-center">Receituário</h1>
+        <div class="card-header text-light">
 
-        <form id="receita-form" class="prescription-form">
+            <h1 class="text-center">Receituário</h1>
 
-            <span class="mt-3 mb-3" id="danger"></span>
+        </div>
 
-            <input id="prescriptionId" class="form-control mb-3" type="hidden"
-                asp-for="Id" disabled>
+        <div class="card-body">
 
-            <label for="">Nome do Paciente: </label>
-            <input type="text" id="pacientName" class="form-control mb-3"
-                asp-for="PacientName" required>
+            <div class="receita">
 
-            <label for="">Nome do Médico: </label>
-            <input type="text" id="doctorName" class="form-control mb-3"
-                asp-for="DoctorName" required>
+                <form id="receita-form" class="prescription-form">
 
-            <label for="">Data da consulta: </label>
-            <input type="date" id="dataAppoiment" class="form-control mb-3"
-                asp-for="DateOfMedicalAppoiment" required>
+                    <span class="mt-3 mb-3" id="danger"></span>
 
-            <p>Salve a receita para inserir medicamentos.</p>
+                    <div class="card medicine-card">
 
-            <button type="submit" title="Gerar Receita" class="btn btn-md
-                btn-primary mb-3">Salvar</button>
+                        <h5 class="card-header">Informações básicas :</h5>
 
-            <button target type="button" title="Salve a receita para adicionar
-                medicamentos." class="btn btn-md
-                btn-primary medic-btn mb-3" disabled>Adicionar Medicamentos</button>
-        </form>
+                        <div class="card-body">
+
+                            <input id="prescriptionId" class="form-control mb-3"
+                                type="hidden"
+                                asp-for="Id" disabled>
+
+                            <label for="">Nome do Paciente: </label>
+                            <input type="text" id="pacientName"
+                                class="form-control
+                                mb-3"
+                                asp-for="PacientName" required>
+
+                            <label for="">Nome do Médico: </label>
+                            <input type="text" id="doctorName"
+                                class="form-control mb-3"
+                                asp-for="DoctorName" required>
+
+                            <label for="">Data da consulta: </label>
+                            <input type="date" id="dataAppoiment"
+                                class="form-control
+                                mb-3"
+                                asp-for="DateOfMedicalAppoiment" required>
+                        </div>
+
+                    </div>
+
+                    <div class="card medicine-card">
+
+                        <h5 class="card-header">Medicações :</h5>
+
+                        <div class="card-body">
+
+                            <p class="ml-3">Salve a receita para inserir
+                                medicamentos.</p>
+
+                            <button target type="button" title="Salve a receita
+                                para adicionar medicamentos." class="btn btn-md
+                                btn-info btn-printer medic-btn ml-3" disabled>
+                                <span class="material-symbols-outlined"> syringe
+                                </span> Adicionar Medicamentos </button>
+
+                        </div>
+
+                    </div>
+
+                    <button type="submit" title="Gerar Receita" class="btn
+                        btn-md btn-secondary btn-printer"> <span
+                            class="material-symbols-outlined"> save </span>
+                        Salvar </button>
+
+                </form>
+
+            </div>
+        </div>
 
     </div>
+
 
 </div>

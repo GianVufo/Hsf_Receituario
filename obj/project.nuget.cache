@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/ljgjXX2lMbgx69dkFTt+tyMD/p3Jpw7FMk1AY+YblmQtqazHnNynA0RnbQiFs2nXmPGjYy1XxqSnLLWXA8zJQ==",
+  "dgSpecHash": "mjK1UMLiwtOr65RoGz0Cpf89jdFlw6ymlp9NJiQk0efDLHxc17jGec8kzFu9cgxeu+QZXCzsDg3onwysEkz3XQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrador\\Documents\\Hsf_Receituario\\Hsf_Receitas.csproj",
+  "projectFilePath": "D:\\WORKSPACE\\Web_Projects\\Hsf_Receituario\\Hsf_Receitas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrador\\.nuget\\packages\\microsoft.csharp\\4.6.0\\microsoft.csharp.4.6.0.nupkg.sha512",
     "C:\\Users\\Administrador\\.nuget\\packages\\microsoft.entityframeworkcore\\3.0.0\\microsoft.entityframeworkcore.3.0.0.nupkg.sha512",

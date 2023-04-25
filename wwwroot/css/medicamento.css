@@ -3,11 +3,11 @@
   justify-content: center;
   margin-bottom: 9%;
   margin-top: 5%;
-  margin-bottom: 10%;
+  margin-bottom: 0%;
 }
 
 .medicament-form {
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 
 .medicament-form input {
@@ -15,12 +15,10 @@
 }
 
 .medicament-form button {
-  margin-left: 33%;
+  margin-left: 40%;
 }
 
 .table-medicament {
-  margin-left: 5%;
-
   padding: 0%;
 }
 
@@ -37,4 +35,16 @@
 
 .table-medicament tr:hover {
   cursor: pointer;
+}
+
+.medicine-card {
+  width: 100%;
+  border: 1px solid #007bff;
+  opacity: 100%;
+}
+
+.medicine-card h5 {
+  color: #fff;
+  font-weight: bold;
+  background-color: #007bff;
 }
