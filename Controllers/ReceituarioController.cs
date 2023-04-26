@@ -16,7 +16,6 @@ namespace Hsf_Receitas.Controllers
         private readonly IWebHostEnvironment _environment;
         private readonly MedicacaoServices _MedicacaoServices;
         private readonly ReceituarioServices _ReceituarioServices;
-        private List<Receituario> listaDeReceitas;
 
         public ReceituarioController(ILogger<ReceituarioController> logger, IWebHostEnvironment environment, ReceituarioServices receituarioServices, MedicacaoServices medicacaoServices)
         {
@@ -24,7 +23,6 @@ namespace Hsf_Receitas.Controllers
             _environment = environment; 
             _ReceituarioServices = receituarioServices;
             _MedicacaoServices = medicacaoServices;
-            listaDeReceitas = new List<Receituario>();
         }
 
         public IActionResult Prescription()
