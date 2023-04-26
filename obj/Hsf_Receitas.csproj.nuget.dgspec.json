@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\WORKSPACE\\Web_Projects\\Hsf_Receituario\\Hsf_Receitas.csproj": {}
+    "C:\\Users\\Administrador\\Desktop\\Hsf_Receituario\\Hsf_Receitas.csproj": {}
   },
   "projects": {
-    "D:\\WORKSPACE\\Web_Projects\\Hsf_Receituario\\Hsf_Receitas.csproj": {
+    "C:\\Users\\Administrador\\Desktop\\Hsf_Receituario\\Hsf_Receitas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WORKSPACE\\Web_Projects\\Hsf_Receituario\\Hsf_Receitas.csproj",
+        "projectUniqueName": "C:\\Users\\Administrador\\Desktop\\Hsf_Receituario\\Hsf_Receitas.csproj",
         "projectName": "Hsf_Receitas",
-        "projectPath": "D:\\WORKSPACE\\Web_Projects\\Hsf_Receituario\\Hsf_Receitas.csproj",
+        "projectPath": "C:\\Users\\Administrador\\Desktop\\Hsf_Receituario\\Hsf_Receitas.csproj",
         "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
-        "outputPath": "D:\\WORKSPACE\\Web_Projects\\Hsf_Receituario\\obj\\",
+        "outputPath": "C:\\Users\\Administrador\\Desktop\\Hsf_Receituario\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,6 +44,18 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "FastReport.OpenSource": {
+              "target": "Package",
+              "version": "[2023.2.9, )"
+            },
+            "FastReport.OpenSource.Export.PdfSimple": {
+              "target": "Package",
+              "version": "[2023.2.9, )"
+            },
+            "FastReport.OpenSource.Web": {
+              "target": "Package",
+              "version": "[2023.2.9, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",

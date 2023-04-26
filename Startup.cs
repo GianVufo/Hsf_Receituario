@@ -33,8 +33,8 @@ namespace Hsf_Receitas
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddMemoryCache();
             services.AddSession();
-            //services.AddScoped<MedicacaoServices>(); // Aplicação para injeção de dependência da Classe TA.
-
+            services.AddScoped<MedicacaoServices>();
+            services.AddScoped<ReceituarioServices>();
 
         }
 

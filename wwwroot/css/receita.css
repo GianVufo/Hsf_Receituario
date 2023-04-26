@@ -25,6 +25,19 @@
     font-size: 18px;
 }
 
+.btn-printer-p {
+    width: 7em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.btn-printer-p span{
+    margin-right: 5%;
+}
+
 .btn-printer span{
     margin-right: 6px;   
 }

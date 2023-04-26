@@ -10,6 +10,8 @@
 
     List<Medicacao> medicList = database.Medicamentos.Where(m => m.ReceituarioId ==
     Model.Id).ToList();
+
+    int medicIdPrint = @Model.Id;
 }
 
 <div class="prescription">
@@ -82,7 +84,7 @@
 
                     </div>
 
-                    <button class="btn btn-md btn-secondary btn-printer" href=""><span class="material-symbols-outlined"> print </span> Imprimir </button>
+                    <a href="/Receituario/PrescriptionPrintToPDF?id=@Model.Id" target="_blank" title="Imprimir receituário" class="btn btn-md btn-secondary btn-printer-p" href=""><span class="material-symbols-outlined"> print </span> Imprimir </a>
 
                 </form>
 
