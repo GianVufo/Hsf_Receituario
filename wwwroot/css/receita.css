@@ -54,4 +54,18 @@
     border: 1px solid  #007bff;
     background-color: #007bff;
 }
-  
+
+.edit-button {
+    display: flex;
+    align-items: center;
+    margin-top: 26%;
+}
+
+.edit-button button {
+    width: 25em;
+}
+
+.card-body-edit-prescription {
+    margin-left: 4%;
+    margin-right: 0%;
+}

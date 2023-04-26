@@ -20,6 +20,7 @@
 
 .table-medicament {
   padding: 0%;
+  height: 5em;
 }
 
 .table-medicament tr>th:first-child,

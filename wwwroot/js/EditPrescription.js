@@ -15,7 +15,7 @@ function EditPrescription() {
         setTimeout(function () {
           $("#alerta")
             .html(
-              '<div class="alert alert-success"> Receita Finalizada com Sucesso! </div>'
+              '<div class="alert alert-success"> Receita atualizada com Sucesso! </div>'
             )
             .fadeOut(5000);
         }, 80);

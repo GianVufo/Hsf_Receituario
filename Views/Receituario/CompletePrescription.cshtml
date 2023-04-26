@@ -36,25 +36,28 @@
 
                         <h5 class="card-header">Informações básicas :</h5>
 
-                        <div class="card-body">
+                        <div class="row">
 
-                            <input id="up-prescriptionId" class="form-control mb-3"
-                                type="hidden" asp-for="Id" disabled>
+                            <p class=" ml-5 mt-4 text-danger text-center">Ao realizar alterações nas informções básicas, salve-as antes de imprimir.</p>
 
-                            <label for="">Nome do Paciente: </label>
-                            <input type="text" id="up-pacientName" class="form-control
-                                mb-3"
-                                asp-for="PacientName" required>
+                            <div class="card-body card-body-edit-prescription col-md-8">
 
-                            <label for="">Nome do Médico: </label>
-                            <input type="text" id="up-doctorName" class="form-control
-                                mb-3"
-                                asp-for="DoctorName" required>
+                                <input id="up-prescriptionId" class="form-control mb-3" type="hidden" asp-for="Id" disabled>
 
-                            <label for="">Data da consulta: </label>
-                            <input type="date" id="up-dataAppoiment" class="form-control
-                                mb-3"
-                                asp-for="DateOfMedicalAppoiment" required>
+                                <label class="text-primary" for="">Nome do Paciente: </label>
+                                <input type="text" id="up-pacientName" class="form-control border-primary mb-3" asp-for="PacientName" required>
+
+                                <label class="text-primary" for="">Nome do Médico: </label>
+                                <input type="text" id="up-doctorName" class="form-control border-primary mb-3" asp-for="DoctorName" required>
+
+                                <label class="text-primary" for="">Data da consulta: </label>
+                                <input type="date" id="up-dataAppoiment" class="form-control border-primary mb-3" asp-for="DateOfMedicalAppoiment" required>
+
+                            </div>
+
+                            <div class="col-md-3 edit-button">
+                                <button type="submit" class=" btn btn-md btn-primary">Salvar</button>
+                            </div>
 
                         </div>
 
@@ -72,13 +75,7 @@
                                 @await Html.PartialAsync("/Views/Medicacao/_ListaDeMedicacao.cshtml", @medicList)
                             </div>
 
-                            <button type="button" data-toggle="modal"
-                                data-target="#medication-modal-@Model.Id"
-                                title="Inserir medicamentos à receita"
-                                onclick=" inserirRemedios()" class="btn
-                                btn-md btn-info btn-printer ml-3"> <span
-                                    class="material-symbols-outlined"> syringe
-                                </span> Adicionar Medicamentos</button>
+                            <button type="button" data-toggle="modal" data-target="#medication-modal-@Model.Id" title="Inserir medicamentos à receita" onclick=" inserirRemedios()" class="btn btn-md btn-info btn-printer ml-3"> <span class="material-symbols-outlined"> syringe </span> Adicionar Medicamentos</button>
 
                         </div>
 
@@ -93,24 +90,21 @@
 
     </div>
 
-
 </div>
 
 <!--Start Medication Modal-->
 
-<div class="modal fade" id="medication-modal-@Model.Id" tabindex="-1"
-    role="dialog"
-    aria-labelledby="registerUserTitle" aria-hidden="true">
+<div class="modal fade" id="medication-modal-@Model.Id" tabindex="-1" role="dialog" aria-labelledby="registerUserTitle" aria-hidden="true">
 
     <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+
         <div class="modal-content">
 
             <div class="modal-header text-center">
 
                 <h2 class="text-center mb-0"> Inserir Medicamento</h2>
 
-                <button type="button" class="close" data-dismiss="modal"
-                    aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
                     <span aria-hidden="true">&times;</span>
 
