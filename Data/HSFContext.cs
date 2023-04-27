@@ -21,11 +21,14 @@ namespace Hsf_Receitas.Data
 
             modelBuilder.Entity<Medicacao>().ToTable("Medicamentos");
             modelBuilder.Entity<Receituario>().ToTable("Receitas");
+             modelBuilder.Entity<AtestadoMedico>().ToTable("ATM");
+
 
         }
 
         public DbSet<Medicacao> Medicamentos { get; set; }
         public DbSet<Receituario> Receitas { get; set; }
+         public DbSet<AtestadoMedico> AtestadosMedico { get; set; }
 
     }
     

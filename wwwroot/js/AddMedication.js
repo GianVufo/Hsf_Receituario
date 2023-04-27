@@ -5,6 +5,8 @@ function AddMedications() {
     MedicationName: $("#medicationName").val(),
     MedicationDosage: $("#medicationDosage").val(),
     MedicationMethodUse: $("#medicationUse").val(),
+    UseTime: $("#useTime").val(),
+    DoseTime: $("#doseTime").val(),
     ReceituarioId: $("#receituarioId").val(),
   };
 

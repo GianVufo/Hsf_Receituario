@@ -23,12 +23,22 @@
   height: 5em;
 }
 
+
+.table-medicament tr>th:nth-child(2),
+.table-medicament tr>td:nth-child(2) {
+  width: 1%;
+  white-space: nowrap;
+  text-align: center;
+}
+
 .table-medicament tr>th:first-child,
 .table-medicament tr>td:first-child,
-.table-medicament tr>th:nth-child(2),
-.table-medicament tr>td:nth-child(2),
-.table-medicament tr>th:last-child,
-.table-medicament tr>td:last-child {
+.table-medicament tr>th:nth-child(3),
+.table-medicament tr>td:nth-child(3),
+.table-medicament tr>th:nth-child(4),
+.table-medicament tr>td:nth-child(4),
+.table-medicament tr>th:nth-child(5),
+.table-medicament tr>td:nth-child(5) {
   width: 1%;
   white-space: nowrap;
   text-align: center;

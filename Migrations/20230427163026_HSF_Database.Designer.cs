@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hsf_Receitas.Migrations
 {
     [DbContext(typeof(HSFContext))]
-    [Migration("20230423022839_HSF_Database")]
+    [Migration("20230427163026_HSF_Database")]
     partial class HSF_Database
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -19,10 +19,47 @@ namespace Hsf_Receitas.Migrations
                 .HasAnnotation("ProductVersion", "3.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("Hsf_Receitas.Models.AtestadoMedico", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("CID")
+                        .IsRequired()
+                        .HasColumnType("varchar(20) CHARACTER SET utf8mb4")
+                        .HasMaxLength(20);
+
+                    b.Property<string>("MedicUnity")
+                        .IsRequired()
+                        .HasColumnType("varchar(40) CHARACTER SET utf8mb4")
+                        .HasMaxLength(40);
+
+                    b.Property<string>("PacientName")
+                        .IsRequired()
+                        .HasColumnType("varchar(80) CHARACTER SET utf8mb4")
+                        .HasMaxLength(80);
+
+                    b.Property<int>("ReceituarioId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("RestDays")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ReceituarioId");
+
+                    b.ToTable("ATM");
+                });
+
             modelBuilder.Entity("Hsf_Receitas.Models.Medicacao", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("DoseTime")
                         .HasColumnType("int");
 
                     b.Property<string>("MedicationDosage")
@@ -41,6 +78,9 @@ namespace Hsf_Receitas.Migrations
                         .HasMaxLength(80);
 
                     b.Property<int>("ReceituarioId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UseTime")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -72,6 +112,15 @@ namespace Hsf_Receitas.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Receitas");
+                });
+
+            modelBuilder.Entity("Hsf_Receitas.Models.AtestadoMedico", b =>
+                {
+                    b.HasOne("Hsf_Receitas.Models.Receituario", "Receituario")
+                        .WithMany()
+                        .HasForeignKey("ReceituarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Hsf_Receitas.Models.Medicacao", b =>

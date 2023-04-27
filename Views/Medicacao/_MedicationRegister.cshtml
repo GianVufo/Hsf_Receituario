@@ -47,6 +47,16 @@
 
             </select>
 
+            <label for="">Tempo de uso (Dias): </label>
+            <input id="useTime" class="form-control mb-3"
+                asp-for="@Model.UseTime"
+                type="number" required>
+
+            <label for="">Dose a cada (Hrs): </label>
+            <input id="doseTime" class="form-control mb-3"
+                asp-for="@Model.DoseTime"
+                type="number" required>
+
             <button type="submit" class="btn btn-md btn-primary mt-3">Adicionar</button>
         </form>
 
